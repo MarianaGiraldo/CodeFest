@@ -12,17 +12,17 @@ def main():
                 if i + j >= len(distribucionTareas):
                     break
                 if distribucionTareas[i + j] < valorMinimo:
-                    valorMinimo = s[i + j]
+                    valorMinimo = distribucionTareas[i + j]
                     indexDelvalorMinimo = i + j
                 if distribucionTareas[i] >= -distribucionTareas[indexDelvalorMinimo] and indexDelvalorMinimo >= 0:
                     break
             if indexDelvalorMinimo >= 0:
-                if s[i] >= -s[indexDelvalorMinimo]:
-                    s[i] += s[indexDelvalorMinimo]
-                    s[indexDelvalorMinimo] = 0
+                if distribucionTareas[i] >= -distribucionTareas[indexDelvalorMinimo]:
+                    distribucionTareas[i] += distribucionTareas[indexDelvalorMinimo]
+                    distribucionTareas[indexDelvalorMinimo] = 0
                 else:
-                    s[indexDelvalorMinimo] += s[i]
-                    s[i] = 0
+                    distribucionTareas[indexDelvalorMinimo] += distribucionTareas[i]
+                    distribucionTareas[i] = 0
 
     for i in range(len(distribucionTareas)):
         if distribucionTareas[i] < 0:

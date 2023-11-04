@@ -10,7 +10,7 @@ def tablero(n,x,y,p):
     for j in range(p):
         x-=1;
         y-=1;
-        #arriba
+        #izquierda
         for i in range(j*2+3):
             if x+i>=0 and y>=0 and x+i<n:
                 matriz[x+i][y]=p-j-1
@@ -22,7 +22,7 @@ def tablero(n,x,y,p):
         for i in range(j*2+3):
             if x+i>=0 and y+j*2+2>=0 and x+i<n and y+j*2+2<n:
                 matriz[x+i][y+j*2+2]=p-j-1
-        #izquierda
+        #arriba
         for i in range(j*2+3):
             if x>=0 and y+i>=0 and y+i<n:
                 matriz[x][y+i]=p-j-1
